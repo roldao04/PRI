@@ -1,0 +1,21 @@
+"""The entrypoint for the ASGI (FastAPI) application.
+
+This module is used only by an external ASGI application server like `uvicorn` to start the web
+service, including any setup like logging etc. that needs to be completed before the service is
+ready to accept requests.
+
+    `uvicorn sapien.entrypoints.asgi:app --reload`
+
+"""
+
+from dotenv import load_dotenv
+
+from indexa.core.logging import setup_logging
+from indexa.entrypoints.api.app import app
+
+__all__ = ["app"]
+
+# Load environment variables from .env file
+load_dotenv()
+
+setup_logging()

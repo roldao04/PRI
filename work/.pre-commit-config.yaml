@@ -1,0 +1,41 @@
+repos:
+  # Basic file checks
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-toml
+      - id: check-merge-conflict
+
+  # Ruff linting and formatting for both assignments
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.1.15
+    hooks:
+      - id: ruff
+        args: [--fix]
+        files: ^(Assignment 1|Assignment 2)/src/.*\.py$
+      - id: ruff-format
+        files: ^(Assignment 1|Assignment 2)/src/.*\.py$
+
+  # Type checking with pyright
+  - repo: local
+    hooks:
+      # Pyright for Assignment 1
+      - id: pyright-assignment1
+        name: pyright (Assignment 1)
+        entry: bash -c 'cd "Assignment 1" && uv run pyright src/'
+        language: system
+        types: [python]
+        files: ^Assignment 1/src/.*\.py$
+        pass_filenames: false
+
+      # Pyright for Assignment 2
+      - id: pyright-assignment2
+        name: pyright (Assignment 2)
+        entry: bash -c 'cd "Assignment 2" && uv run pyright src/'
+        language: system
+        types: [python]
+        files: ^Assignment 2/src/.*\.py$
+        pass_filenames: false

@@ -1,0 +1,712 @@
+[
+  {
+    "run_number": 1,
+    "timestamp": "20251107_223022",
+    "varied_parameter": "indexer_batch_size",
+    "varied_value": 250,
+    "configuration": {
+      "indexer_batch_size": 250,
+      "block_size_mb": 200,
+      "memory_limit_mb": 1800,
+      "tokenizer_batch_size": 5000,
+      "min_term_frequency": 1
+    },
+    "status": "success",
+    "error_message": null,
+    "timings": {
+      "tokenization_seconds": 465.96507716178894,
+      "block_writing_seconds": 124.29445719718933,
+      "merge_seconds": 340.67572689056396,
+      "metadata_seconds": 6.3749988079071045,
+      "total_indexing_seconds": 1682.9231503009796,
+      "total_elapsed_seconds": 1682.9233102798462
+    },
+    "throughput": {
+      "documents_per_second": 685.8470572898941,
+      "tokens_per_second": 184238.50398057743
+    },
+    "statistics": {
+      "documents_indexed": 1154228,
+      "unique_terms": 3842071,
+      "total_tokens": 310059273,
+      "blocks_created": 101,
+      "avg_document_length": 268.6291382638439
+    },
+    "elapsed_seconds": 1683.2694869041443
+  },
+  {
+    "run_number": 2,
+    "timestamp": "20251107_225831",
+    "varied_parameter": "indexer_batch_size",
+    "varied_value": 500,
+    "configuration": {
+      "indexer_batch_size": 500,
+      "block_size_mb": 200,
+      "memory_limit_mb": 1800,
+      "tokenizer_batch_size": 5000,
+      "min_term_frequency": 1
+    },
+    "status": "success",
+    "error_message": null,
+    "timings": {
+      "tokenization_seconds": 434.87128925323486,
+      "block_writing_seconds": 118.8057656288147,
+      "merge_seconds": 341.4610586166382,
+      "metadata_seconds": 6.399200916290283,
+      "total_indexing_seconds": 1629.9425828456879,
+      "total_elapsed_seconds": 1629.9428021907806
+    },
+    "throughput": {
+      "documents_per_second": 708.1401865443501,
+      "tokens_per_second": 190227.0880814064
+    },
+    "statistics": {
+      "documents_indexed": 1154228,
+      "unique_terms": 3842071,
+      "total_tokens": 310059273,
+      "blocks_created": 98,
+      "avg_document_length": 268.6291382638439
+    },
+    "elapsed_seconds": 1630.3139896392822
+  },
+  {
+    "run_number": 3,
+    "timestamp": "20251107_232546",
+    "varied_parameter": "indexer_batch_size",
+    "varied_value": 1000,
+    "configuration": {
+      "indexer_batch_size": 1000,
+      "block_size_mb": 200,
+      "memory_limit_mb": 1800,
+      "tokenizer_batch_size": 5000,
+      "min_term_frequency": 1
+    },
+    "status": "success",
+    "error_message": null,
+    "timings": {
+      "tokenization_seconds": 397.24346804618835,
+      "block_writing_seconds": 113.65455770492554,
+      "merge_seconds": 332.2493917942047,
+      "metadata_seconds": 6.396432399749756,
+      "total_indexing_seconds": 1574.8806774616241,
+      "total_elapsed_seconds": 1574.8808488845825
+    },
+    "throughput": {
+      "documents_per_second": 732.8986194844441,
+      "tokens_per_second": 196877.92458686704
+    },
+    "statistics": {
+      "documents_indexed": 1154228,
+      "unique_terms": 3842071,
+      "total_tokens": 310059273,
+      "blocks_created": 83,
+      "avg_document_length": 268.6291382638439
+    },
+    "elapsed_seconds": 1575.2600710391998
+  },
+  {
+    "run_number": 4,
+    "timestamp": "20251107_235207",
+    "varied_parameter": "indexer_batch_size",
+    "varied_value": 1500,
+    "configuration": {
+      "indexer_batch_size": 1500,
+      "block_size_mb": 200,
+      "memory_limit_mb": 1800,
+      "tokenizer_batch_size": 5000,
+      "min_term_frequency": 1
+    },
+    "status": "crashed",
+    "error_message": "Exit code 1",
+    "stderr": "5-11-07 23:52:07,596 INFO __main__ - Batch size: 1500 documents\n2025-11-07 23:52:07,596 INFO __main__ - Minimum term frequency: 1\n2025-11-07 23:52:07,612 INFO indexa.indexer.spimi - Initialized SPIMI indexer with 1800MB limit\n2025-11-07 23:52:07,612 INFO indexa.indexer.spimi - Created SQLite forward index database: /home/roldao/Desktop/MEI/PRI/practical-assignments-pri_g01/Assignment 1/benchmark/run_20251107_235207_indexer_batch_size_1500/documents.db\n2025-11-07 23:52:07,613 INFO indexa.indexer.spimi - Starting indexing of 1 documents\n2025-11-07 23:52:07,613 INFO indexa.indexer.spimi - Indexing documents from Arrow file (streaming mode)\n2025-11-07 23:52:07,613 INFO indexa.indexer.spimi - Using batch size: 1500\n2025-11-07 23:52:44,217 INFO indexa.indexer.spimi - Indexed 15000 documents from Arrow file\n2025-11-07 23:52:49,336 ERROR indexa.core.limit_memory - \n\n[MemoryGuard] CRITICAL: Total memory usage (2015.00 MB) across 1 process(es) exceeded the limit of 2000 MB. Terminating program.\n"
+  },
+  {
+    "run_number": 5,
+    "timestamp": "20251107_235254",
+    "varied_parameter": "indexer_batch_size",
+    "varied_value": 2000,
+    "configuration": {
+      "indexer_batch_size": 2000,
+      "block_size_mb": 200,
+      "memory_limit_mb": 1800,
+      "tokenizer_batch_size": 5000,
+      "min_term_frequency": 1
+    },
+    "status": "crashed",
+    "error_message": "Exit code 1",
+    "stderr": "ktop/MEI/PRI/practical-assignments-pri_g01/Assignment 1/benchmark/run_20251107_235254_indexer_batch_size_2000/documents.db\n2025-11-07 23:52:54,621 INFO indexa.indexer.spimi - Starting indexing of 1 documents\n2025-11-07 23:52:54,621 INFO indexa.indexer.spimi - Indexing documents from Arrow file (streaming mode)\n2025-11-07 23:52:54,621 INFO indexa.indexer.spimi - Using batch size: 2000\n2025-11-07 23:53:22,666 INFO indexa.indexer.spimi - Indexed 10000 documents from Arrow file\n2025-11-07 23:53:22,744 INFO indexa.indexer.spimi - Writing block 0 with 229670 terms to /home/roldao/Desktop/MEI/PRI/practical-assignments-pri_g01/Assignment 1/benchmark/run_20251107_235254_indexer_batch_size_2000/blocks/block_0000.msgpack\n2025-11-07 23:53:43,438 INFO indexa.indexer.spimi - Indexed 20000 documents from Arrow file\n2025-11-07 23:54:03,502 ERROR indexa.core.limit_memory - \n\n[MemoryGuard] CRITICAL: Total memory usage (2142.00 MB) across 1 process(es) exceeded the limit of 2000 MB. Terminating program.\n"
+  },
+  {
+    "run_number": 6,
+    "timestamp": "20251107_235408",
+    "varied_parameter": "indexer_batch_size",
+    "varied_value": 3000,
+    "configuration": {
+      "indexer_batch_size": 3000,
+      "block_size_mb": 200,
+      "memory_limit_mb": 1800,
+      "tokenizer_batch_size": 5000,
+      "min_term_frequency": 1
+    },
+    "status": "crashed",
+    "error_message": "Exit code 1",
+    "stderr": "Memory limit: 1800MB\n2025-11-07 23:54:08,774 INFO __main__ - Block size threshold: 200MB\n2025-11-07 23:54:08,774 INFO __main__ - Batch size: 3000 documents\n2025-11-07 23:54:08,774 INFO __main__ - Minimum term frequency: 1\n2025-11-07 23:54:08,790 INFO indexa.indexer.spimi - Initialized SPIMI indexer with 1800MB limit\n2025-11-07 23:54:08,791 INFO indexa.indexer.spimi - Created SQLite forward index database: /home/roldao/Desktop/MEI/PRI/practical-assignments-pri_g01/Assignment 1/benchmark/run_20251107_235408_indexer_batch_size_3000/documents.db\n2025-11-07 23:54:08,791 INFO indexa.indexer.spimi - Starting indexing of 1 documents\n2025-11-07 23:54:08,791 INFO indexa.indexer.spimi - Indexing documents from Arrow file (streaming mode)\n2025-11-07 23:54:08,791 INFO indexa.indexer.spimi - Using batch size: 3000\n2025-11-07 23:54:42,194 ERROR indexa.core.limit_memory - \n\n[MemoryGuard] CRITICAL: Total memory usage (2046.00 MB) across 1 process(es) exceeded the limit of 2000 MB. Terminating program.\n"
+  },
+  {
+    "run_number": 7,
+    "timestamp": "20251107_235447",
+    "varied_parameter": "block_size_mb",
+    "varied_value": 100,
+    "configuration": {
+      "indexer_batch_size": 1000,
+      "block_size_mb": 100,
+      "memory_limit_mb": 1800,
+      "tokenizer_batch_size": 5000,
+      "min_term_frequency": 1
+    },
+    "status": "success",
+    "error_message": null,
+    "timings": {
+      "tokenization_seconds": 401.1840500831604,
+      "block_writing_seconds": 112.52855277061462,
+      "merge_seconds": 341.3706691265106,
+      "metadata_seconds": 6.463291168212891,
+      "total_indexing_seconds": 1579.1873071193695,
+      "total_elapsed_seconds": 1579.1874976158142
+    },
+    "throughput": {
+      "documents_per_second": 730.8999100756567,
+      "tokens_per_second": 196341.01300074466
+    },
+    "statistics": {
+      "documents_indexed": 1154228,
+      "unique_terms": 3842071,
+      "total_tokens": 310059273,
+      "blocks_created": 109,
+      "avg_document_length": 268.6291382638439
+    },
+    "elapsed_seconds": 1579.5700371265411
+  },
+  {
+    "run_number": 8,
+    "timestamp": "20251108_002112",
+    "varied_parameter": "block_size_mb",
+    "varied_value": 150,
+    "configuration": {
+      "indexer_batch_size": 1000,
+      "block_size_mb": 150,
+      "memory_limit_mb": 1800,
+      "tokenizer_batch_size": 5000,
+      "min_term_frequency": 1
+    },
+    "status": "success",
+    "error_message": null,
+    "timings": {
+      "tokenization_seconds": 397.98257279396057,
+      "block_writing_seconds": 112.98127794265747,
+      "merge_seconds": 341.50674510002136,
+      "metadata_seconds": 6.350022792816162,
+      "total_indexing_seconds": 1574.9569494724274,
+      "total_elapsed_seconds": 1574.9571475982666
+    },
+    "throughput": {
+      "documents_per_second": 732.8631142505317,
+      "tokens_per_second": 196868.3868464773
+    },
+    "statistics": {
+      "documents_indexed": 1154228,
+      "unique_terms": 3842071,
+      "total_tokens": 310059273,
+      "blocks_created": 100,
+      "avg_document_length": 268.6291382638439
+    },
+    "elapsed_seconds": 1575.3322823047638
+  },
+  {
+    "run_number": 9,
+    "timestamp": "20251108_004732",
+    "varied_parameter": "block_size_mb",
+    "varied_value": 200,
+    "configuration": {
+      "indexer_batch_size": 1000,
+      "block_size_mb": 200,
+      "memory_limit_mb": 1800,
+      "tokenizer_batch_size": 5000,
+      "min_term_frequency": 1
+    },
+    "status": "success",
+    "error_message": null,
+    "timings": {
+      "tokenization_seconds": 396.8617067337036,
+      "block_writing_seconds": 113.64626121520996,
+      "merge_seconds": 332.9473030567169,
+      "metadata_seconds": 6.399661540985107,
+      "total_indexing_seconds": 1574.3164596557617,
+      "total_elapsed_seconds": 1574.3166921138763
+    },
+    "throughput": {
+      "documents_per_second": 733.1612538835421,
+      "tokens_per_second": 196948.4758391752
+    },
+    "statistics": {
+      "documents_indexed": 1154228,
+      "unique_terms": 3842071,
+      "total_tokens": 310059273,
+      "blocks_created": 83,
+      "avg_document_length": 268.6291382638439
+    },
+    "elapsed_seconds": 1574.7016277313232
+  },
+  {
+    "run_number": 10,
+    "timestamp": "20251108_011353",
+    "varied_parameter": "block_size_mb",
+    "varied_value": 250,
+    "configuration": {
+      "indexer_batch_size": 1000,
+      "block_size_mb": 250,
+      "memory_limit_mb": 1800,
+      "tokenizer_batch_size": 5000,
+      "min_term_frequency": 1
+    },
+    "status": "success",
+    "error_message": null,
+    "timings": {
+      "tokenization_seconds": 399.831702709198,
+      "block_writing_seconds": 112.65034317970276,
+      "merge_seconds": 325.1480619907379,
+      "metadata_seconds": 6.3282482624053955,
+      "total_indexing_seconds": 1572.0649025440216,
+      "total_elapsed_seconds": 1572.0651183128357
+    },
+    "throughput": {
+      "documents_per_second": 734.2113164108209,
+      "tokens_per_second": 197230.55323100125
+    },
+    "statistics": {
+      "documents_indexed": 1154228,
+      "unique_terms": 3842071,
+      "total_tokens": 310059273,
+      "blocks_created": 67,
+      "avg_document_length": 268.6291382638439
+    },
+    "elapsed_seconds": 1572.454107284546
+  },
+  {
+    "run_number": 11,
+    "timestamp": "20251108_014010",
+    "varied_parameter": "block_size_mb",
+    "varied_value": 300,
+    "configuration": {
+      "indexer_batch_size": 1000,
+      "block_size_mb": 300,
+      "memory_limit_mb": 1800,
+      "tokenizer_batch_size": 5000,
+      "min_term_frequency": 1
+    },
+    "status": "crashed",
+    "error_message": "Exit code 1",
+    "stderr": "documents from Arrow file (streaming mode)\n2025-11-08 01:40:11,019 INFO indexa.indexer.spimi - Using batch size: 1000\n2025-11-08 01:40:25,131 INFO indexa.indexer.spimi - Indexed 5000 documents from Arrow file\n2025-11-08 01:40:38,180 INFO indexa.indexer.spimi - Indexed 10000 documents from Arrow file\n2025-11-08 01:40:38,356 INFO indexa.indexer.spimi - Writing block 0 with 229670 terms to /home/roldao/Desktop/MEI/PRI/practical-assignments-pri_g01/Assignment 1/benchmark/run_20251108_014010_block_size_mb_300/blocks/block_0000.msgpack\n2025-11-08 01:40:50,104 INFO indexa.indexer.spimi - Indexed 15000 documents from Arrow file\n2025-11-08 01:40:57,992 INFO indexa.indexer.spimi - Indexed 20000 documents from Arrow file\n2025-11-08 01:41:10,387 INFO indexa.indexer.spimi - Indexed 25000 documents from Arrow file\n2025-11-08 01:41:19,659 ERROR indexa.core.limit_memory - \n\n[MemoryGuard] CRITICAL: Total memory usage (2017.00 MB) across 1 process(es) exceeded the limit of 2000 MB. Terminating program.\n"
+  },
+  {
+    "run_number": 12,
+    "timestamp": "20251108_014124",
+    "varied_parameter": "block_size_mb",
+    "varied_value": 400,
+    "configuration": {
+      "indexer_batch_size": 1000,
+      "block_size_mb": 400,
+      "memory_limit_mb": 1800,
+      "tokenizer_batch_size": 5000,
+      "min_term_frequency": 1
+    },
+    "status": "crashed",
+    "error_message": "Exit code 1",
+    "stderr": "documents from Arrow file (streaming mode)\n2025-11-08 01:41:24,955 INFO indexa.indexer.spimi - Using batch size: 1000\n2025-11-08 01:41:39,336 INFO indexa.indexer.spimi - Indexed 5000 documents from Arrow file\n2025-11-08 01:41:52,416 INFO indexa.indexer.spimi - Indexed 10000 documents from Arrow file\n2025-11-08 01:41:52,536 INFO indexa.indexer.spimi - Writing block 0 with 229670 terms to /home/roldao/Desktop/MEI/PRI/practical-assignments-pri_g01/Assignment 1/benchmark/run_20251108_014124_block_size_mb_400/blocks/block_0000.msgpack\n2025-11-08 01:42:04,698 INFO indexa.indexer.spimi - Indexed 15000 documents from Arrow file\n2025-11-08 01:42:12,269 INFO indexa.indexer.spimi - Indexed 20000 documents from Arrow file\n2025-11-08 01:42:24,300 INFO indexa.indexer.spimi - Indexed 25000 documents from Arrow file\n2025-11-08 01:42:33,674 ERROR indexa.core.limit_memory - \n\n[MemoryGuard] CRITICAL: Total memory usage (2018.00 MB) across 1 process(es) exceeded the limit of 2000 MB. Terminating program.\n"
+  },
+  {
+    "run_number": 13,
+    "timestamp": "20251108_014238",
+    "varied_parameter": "memory_limit_mb",
+    "varied_value": 1200,
+    "configuration": {
+      "indexer_batch_size": 1000,
+      "block_size_mb": 200,
+      "memory_limit_mb": 1200,
+      "tokenizer_batch_size": 5000,
+      "min_term_frequency": 1
+    },
+    "status": "success",
+    "error_message": null,
+    "timings": {
+      "tokenization_seconds": 396.8632333278656,
+      "block_writing_seconds": 113.72239995002747,
+      "merge_seconds": 332.55812788009644,
+      "metadata_seconds": 6.390666246414185,
+      "total_indexing_seconds": 1569.2940049171448,
+      "total_elapsed_seconds": 1569.2942066192627
+    },
+    "throughput": {
+      "documents_per_second": 735.5077175022257,
+      "tokens_per_second": 197578.8043390296
+    },
+    "statistics": {
+      "documents_indexed": 1154228,
+      "unique_terms": 3842071,
+      "total_tokens": 310059273,
+      "blocks_created": 83,
+      "avg_document_length": 268.6291382638439
+    },
+    "elapsed_seconds": 1569.6823828220367
+  },
+  {
+    "run_number": 14,
+    "timestamp": "20251108_020853",
+    "varied_parameter": "memory_limit_mb",
+    "varied_value": 1400,
+    "configuration": {
+      "indexer_batch_size": 1000,
+      "block_size_mb": 200,
+      "memory_limit_mb": 1400,
+      "tokenizer_batch_size": 5000,
+      "min_term_frequency": 1
+    },
+    "status": "success",
+    "error_message": null,
+    "timings": {
+      "tokenization_seconds": 395.38578844070435,
+      "block_writing_seconds": 113.64558386802673,
+      "merge_seconds": 333.1848089694977,
+      "metadata_seconds": 6.383441209793091,
+      "total_indexing_seconds": 1571.254112482071,
+      "total_elapsed_seconds": 1571.2543165683746
+    },
+    "throughput": {
+      "documents_per_second": 734.5901855791482,
+      "tokens_per_second": 197332.32852920375
+    },
+    "statistics": {
+      "documents_indexed": 1154228,
+      "unique_terms": 3842071,
+      "total_tokens": 310059273,
+      "blocks_created": 83,
+      "avg_document_length": 268.6291382638439
+    },
+    "elapsed_seconds": 1571.6405045986176
+  },
+  {
+    "run_number": 15,
+    "timestamp": "20251108_023510",
+    "varied_parameter": "memory_limit_mb",
+    "varied_value": 1600,
+    "configuration": {
+      "indexer_batch_size": 1000,
+      "block_size_mb": 200,
+      "memory_limit_mb": 1600,
+      "tokenizer_batch_size": 5000,
+      "min_term_frequency": 1
+    },
+    "status": "success",
+    "error_message": null,
+    "timings": {
+      "tokenization_seconds": 395.9343087673187,
+      "block_writing_seconds": 114.41341781616211,
+      "merge_seconds": 334.28059697151184,
+      "metadata_seconds": 6.388653039932251,
+      "total_indexing_seconds": 1572.9402511119843,
+      "total_elapsed_seconds": 1572.9404301643372
+    },
+    "throughput": {
+      "documents_per_second": 733.802741582152,
+      "tokens_per_second": 197120.7981268596
+    },
+    "statistics": {
+      "documents_indexed": 1154228,
+      "unique_terms": 3842071,
+      "total_tokens": 310059273,
+      "blocks_created": 83,
+      "avg_document_length": 268.6291382638439
+    },
+    "elapsed_seconds": 1573.324580192566
+  },
+  {
+    "run_number": 16,
+    "timestamp": "20251108_030129",
+    "varied_parameter": "memory_limit_mb",
+    "varied_value": 1800,
+    "configuration": {
+      "indexer_batch_size": 1000,
+      "block_size_mb": 200,
+      "memory_limit_mb": 1800,
+      "tokenizer_batch_size": 5000,
+      "min_term_frequency": 1
+    },
+    "status": "success",
+    "error_message": null,
+    "timings": {
+      "tokenization_seconds": 395.81602716445923,
+      "block_writing_seconds": 113.78814721107483,
+      "merge_seconds": 333.75452995300293,
+      "metadata_seconds": 6.431213855743408,
+      "total_indexing_seconds": 1573.5650882720947,
+      "total_elapsed_seconds": 1573.5652916431427
+    },
+    "throughput": {
+      "documents_per_second": 733.5113491190036,
+      "tokens_per_second": 197042.52162058747
+    },
+    "statistics": {
+      "documents_indexed": 1154228,
+      "unique_terms": 3842071,
+      "total_tokens": 310059273,
+      "blocks_created": 83,
+      "avg_document_length": 268.6291382638439
+    },
+    "elapsed_seconds": 1573.9510145187378
+  },
+  {
+    "run_number": 17,
+    "timestamp": "20251108_032748",
+    "varied_parameter": "memory_limit_mb",
+    "varied_value": 2000,
+    "configuration": {
+      "indexer_batch_size": 1000,
+      "block_size_mb": 200,
+      "memory_limit_mb": 2000,
+      "tokenizer_batch_size": 5000,
+      "min_term_frequency": 1
+    },
+    "status": "success",
+    "error_message": null,
+    "timings": {
+      "tokenization_seconds": 397.3666205406189,
+      "block_writing_seconds": 113.52232027053833,
+      "merge_seconds": 334.39215302467346,
+      "metadata_seconds": 6.374220132827759,
+      "total_indexing_seconds": 1579.5878655910492,
+      "total_elapsed_seconds": 1579.588027715683
+    },
+    "throughput": {
+      "documents_per_second": 730.7145785785574,
+      "tokens_per_second": 196291.2275603857
+    },
+    "statistics": {
+      "documents_indexed": 1154228,
+      "unique_terms": 3842071,
+      "total_tokens": 310059273,
+      "blocks_created": 83,
+      "avg_document_length": 268.6291382638439
+    },
+    "elapsed_seconds": 1579.9728949069977
+  },
+  {
+    "run_number": 18,
+    "timestamp": "20251108_035414",
+    "varied_parameter": "tokenizer_batch_size",
+    "varied_value": 1000,
+    "configuration": {
+      "indexer_batch_size": 1000,
+      "block_size_mb": 200,
+      "memory_limit_mb": 1800,
+      "tokenizer_batch_size": 1000,
+      "min_term_frequency": 1
+    },
+    "status": "success",
+    "error_message": null,
+    "timings": {
+      "tokenization_seconds": 394.3729522228241,
+      "block_writing_seconds": 113.6765923500061,
+      "merge_seconds": 334.06169271469116,
+      "metadata_seconds": 6.439841985702515,
+      "total_indexing_seconds": 1566.532243013382,
+      "total_elapsed_seconds": 1566.5323622226715
+    },
+    "throughput": {
+      "documents_per_second": 736.804440070632,
+      "tokens_per_second": 197927.1418051479
+    },
+    "statistics": {
+      "documents_indexed": 1154228,
+      "unique_terms": 3842071,
+      "total_tokens": 310059273,
+      "blocks_created": 83,
+      "avg_document_length": 268.6291382638439
+    },
+    "elapsed_seconds": 1566.9139640331268
+  },
+  {
+    "run_number": 19,
+    "timestamp": "20251108_042026",
+    "varied_parameter": "tokenizer_batch_size",
+    "varied_value": 2500,
+    "configuration": {
+      "indexer_batch_size": 1000,
+      "block_size_mb": 200,
+      "memory_limit_mb": 1800,
+      "tokenizer_batch_size": 2500,
+      "min_term_frequency": 1
+    },
+    "status": "success",
+    "error_message": null,
+    "timings": {
+      "tokenization_seconds": 396.4787771701813,
+      "block_writing_seconds": 114.13008117675781,
+      "merge_seconds": 332.7234616279602,
+      "metadata_seconds": 6.644922256469727,
+      "total_indexing_seconds": 1570.9533495903015,
+      "total_elapsed_seconds": 1570.9535219669342
+    },
+    "throughput": {
+      "documents_per_second": 734.730839493477,
+      "tokens_per_second": 197370.11226900332
+    },
+    "statistics": {
+      "documents_indexed": 1154228,
+      "unique_terms": 3842071,
+      "total_tokens": 310059273,
+      "blocks_created": 83,
+      "avg_document_length": 268.6291382638439
+    },
+    "elapsed_seconds": 1571.3366248607635
+  },
+  {
+    "run_number": 20,
+    "timestamp": "20251108_044643",
+    "varied_parameter": "tokenizer_batch_size",
+    "varied_value": 5000,
+    "configuration": {
+      "indexer_batch_size": 1000,
+      "block_size_mb": 200,
+      "memory_limit_mb": 1800,
+      "tokenizer_batch_size": 5000,
+      "min_term_frequency": 1
+    },
+    "status": "success",
+    "error_message": null,
+    "timings": {
+      "tokenization_seconds": 397.8969292640686,
+      "block_writing_seconds": 113.67603611946106,
+      "merge_seconds": 333.13403248786926,
+      "metadata_seconds": 6.576735019683838,
+      "total_indexing_seconds": 1574.3174233436584,
+      "total_elapsed_seconds": 1574.3176045417786
+    },
+    "throughput": {
+      "documents_per_second": 733.1608289649724,
+      "tokens_per_second": 196948.36169366597
+    },
+    "statistics": {
+      "documents_indexed": 1154228,
+      "unique_terms": 3842071,
+      "total_tokens": 310059273,
+      "blocks_created": 83,
+      "avg_document_length": 268.6291382638439
+    },
+    "elapsed_seconds": 1574.7033536434174
+  },
+  {
+    "run_number": 21,
+    "timestamp": "20251108_051303",
+    "varied_parameter": "tokenizer_batch_size",
+    "varied_value": 7500,
+    "configuration": {
+      "indexer_batch_size": 1000,
+      "block_size_mb": 200,
+      "memory_limit_mb": 1800,
+      "tokenizer_batch_size": 7500,
+      "min_term_frequency": 1
+    },
+    "status": "success",
+    "error_message": null,
+    "timings": {
+      "tokenization_seconds": 395.76126194000244,
+      "block_writing_seconds": 114.41247177124023,
+      "merge_seconds": 332.66859006881714,
+      "metadata_seconds": 6.521690130233765,
+      "total_indexing_seconds": 1574.2235639095306,
+      "total_elapsed_seconds": 1574.2237000465393
+    },
+    "throughput": {
+      "documents_per_second": 733.2045629638768,
+      "tokens_per_second": 196960.1099201045
+    },
+    "statistics": {
+      "documents_indexed": 1154228,
+      "unique_terms": 3842071,
+      "total_tokens": 310059273,
+      "blocks_created": 83,
+      "avg_document_length": 268.6291382638439
+    },
+    "elapsed_seconds": 1574.618771314621
+  },
+  {
+    "run_number": 22,
+    "timestamp": "20251108_053923",
+    "varied_parameter": "tokenizer_batch_size",
+    "varied_value": 10000,
+    "configuration": {
+      "indexer_batch_size": 1000,
+      "block_size_mb": 200,
+      "memory_limit_mb": 1800,
+      "tokenizer_batch_size": 10000,
+      "min_term_frequency": 1
+    },
+    "status": "success",
+    "error_message": null,
+    "timings": {
+      "tokenization_seconds": 398.03188490867615,
+      "block_writing_seconds": 114.20900559425354,
+      "merge_seconds": 332.9797832965851,
+      "metadata_seconds": 6.388697147369385,
+      "total_indexing_seconds": 1574.4512252807617,
+      "total_elapsed_seconds": 1574.451457977295
+    },
+    "throughput": {
+      "documents_per_second": 733.0984986243031,
+      "tokens_per_second": 196931.6179479643
+    },
+    "statistics": {
+      "documents_indexed": 1154228,
+      "unique_terms": 3842071,
+      "total_tokens": 310059273,
+      "blocks_created": 83,
+      "avg_document_length": 268.6291382638439
+    },
+    "elapsed_seconds": 1574.8382534980774
+  },
+  {
+    "run_number": 23,
+    "timestamp": "20251108_060543",
+    "varied_parameter": "tokenizer_batch_size",
+    "varied_value": 15000,
+    "configuration": {
+      "indexer_batch_size": 1000,
+      "block_size_mb": 200,
+      "memory_limit_mb": 1800,
+      "tokenizer_batch_size": 15000,
+      "min_term_frequency": 1
+    },
+    "status": "success",
+    "error_message": null,
+    "timings": {
+      "tokenization_seconds": 397.9426383972168,
+      "block_writing_seconds": 113.87588834762573,
+      "merge_seconds": 333.3159337043762,
+      "metadata_seconds": 6.388610124588013,
+      "total_indexing_seconds": 1579.5725178718567,
+      "total_elapsed_seconds": 1579.5726833343506
+    },
+    "throughput": {
+      "documents_per_second": 730.7216769306985,
+      "tokens_per_second": 196293.1343846045
+    },
+    "statistics": {
+      "documents_indexed": 1154228,
+      "unique_terms": 3842071,
+      "total_tokens": 310059273,
+      "blocks_created": 83,
+      "avg_document_length": 268.6291382638439
+    },
+    "elapsed_seconds": 1579.9665758609772
+  }
+]

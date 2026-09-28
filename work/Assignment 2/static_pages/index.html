@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indexa - Motor de Busca Inteligente</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>📚 Indexa</h1>
+            <p class="subtitle">Sistema de Recuperação de Informação com BM25F e Reranking Neural</p>
+        </header>
+
+        <!-- Statistics -->
+        <div class="statistics">
+            <div id="stats" class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-value">...</div>
+                    <div class="stat-label">A carregar...</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Search Box -->
+        <div class="search-box">
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Pesquisar documentos..."
+                class="search-input"
+            >
+            <button onclick="performSearch()" id="searchButton" class="search-button">
+                Pesquisar
+            </button>
+        </div>
+
+        <!-- Advanced Options -->
+        <div class="advanced-options">
+            <button onclick="toggleAdvancedOptions()" id="toggleAdvanced" class="toggle-button">
+                Opções Avançadas
+            </button>
+            <div id="advancedPanel" class="advanced-panel hidden">
+
+                <!-- Search Parameters Section -->
+                <div class="options-section">
+                    <h3 class="section-title">Parâmetros de Pesquisa</h3>
+
+                    <div class="option-group">
+                        <label for="numResults">Número de Resultados <span class="default-hint">(padrão: 10)</span></label>
+                        <input type="number" id="numResults" value="10" min="1" max="100">
+                    </div>
+
+                    <div class="option-group">
+                        <label for="minScore">Score Mínimo <span class="default-hint">(padrão: 0.0)</span></label>
+                        <input type="number" id="minScore" value="0.0" min="0" step="0.1">
+                    </div>
+
+                    <!-- BM25 Parameters (collapsible) -->
+                    <div class="option-group">
+                        <button onclick="toggleBM25Params()" id="toggleBM25" class="toggle-subsection">
+                            <span id="bm25Arrow">▶</span> Parâmetros BM25 (avançado)
+                        </button>
+                    </div>
+                    <div id="bm25Panel" class="subsection-panel hidden">
+                        <div class="option-group">
+                            <label for="k1Param">k1 - Saturação de Frequência <span class="default-hint">(padrão: 1.2)</span></label>
+                            <input type="number" id="k1Param" value="1.2" min="0" max="3" step="0.1">
+                        </div>
+                        <div class="option-group">
+                            <label for="bParam">b - Normalização de Comprimento <span class="default-hint">(padrão: 0.75)</span></label>
+                            <input type="number" id="bParam" value="0.75" min="0" max="1" step="0.05">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Enhancements Section -->
+                <div class="options-section">
+                    <h3 class="section-title">Melhorias com IA</h3>
+
+                    <div class="option-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="useReranking" checked>
+                            <span>Reranking Neural (semântico)</span>
+                        </label>
+                        <p class="option-description">Melhora a ordenação usando modelos transformer</p>
+                    </div>
+
+                    <div class="option-group" id="rerankingOptions" style="display: block;">
+                        <label for="rerankModel">Modelo de Reranking:</label>
+                        <select id="rerankModel">
+                            <option value="unicamp-dl" selected>Unicamp-DL (Português otimizado)</option>
+                            <option value="mmarco">mMarco (Multilíngue)</option>
+                        </select>
+                    </div>
+
+                    <div class="option-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="extractSnippets" checked>
+                            <span>Snippets Semânticos</span>
+                        </label>
+                        <p class="option-description">Mostra o parágrafo mais relevante de cada documento</p>
+                    </div>
+
+                    <div class="option-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="generateAnswers" checked>
+                            <span>Resposta Gerada (Gemini RAG)</span>
+                        </label>
+                        <p class="option-description">Gera resposta em linguagem natural usando os top 3 documentos</p>
+                    </div>
+
+                    <div class="option-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="expandQuery" checked>
+                            <span>Expansão de Consulta</span>
+                        </label>
+                        <p class="option-description">Adiciona automaticamente sinónimos e termos relacionados</p>
+                    </div>
+                </div>
+
+                <!-- Document Similarity Section -->
+                <div class="options-section">
+                    <h3 class="section-title">Similaridade de Documentos</h3>
+
+                    <div class="option-group">
+                        <label for="similarityMethod">Método para "Documentos Similares":</label>
+                        <select id="similarityMethod">
+                            <option value="hybrid">Híbrido (TF-IDF + Campos)</option>
+                            <option value="cosine">Coseno TF-IDF (Lexical)</option>
+                            <option value="embedding" selected>Semântico (Embeddings precomputados)</option>
+                        </select>
+                        <p class="option-description">Embeddings encontram documentos semanticamente similares</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Loading Spinner -->
+        <div id="loadingSpinner" class="loading-spinner hidden">
+            <div class="spinner"></div>
+            <p>A pesquisar...</p>
+        </div>
+
+        <!-- Search Info -->
+        <div id="searchInfo" class="search-info hidden"></div>
+
+        <!-- AI Answer Snippets -->
+        <div id="answerSnippets" class="answer-snippets-container hidden"></div>
+
+        <!-- Results -->
+        <div id="results" class="results-container"></div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
